@@ -57,7 +57,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px);b
 .menu-btn{display:none;background:none;border:none;color:var(--text);font-size:22px;cursor:pointer}
 
 /* hero */
-header{padding:calc(120px + 14vh) 0 100px;position:relative}
+header{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:130px 0 60px;position:relative}
 .kicker{font-family:var(--mono);color:var(--accent);font-size:14px;margin-bottom:18px;display:flex;align-items:center;gap:10px}
 .kicker::before{content:'';width:34px;height:1px;background:var(--accent)}
 h1{font-size:clamp(38px,6vw,64px);font-weight:800;line-height:1.08;letter-spacing:-.02em;margin-bottom:14px}
@@ -172,7 +172,7 @@ footer a:hover{color:var(--accent)}
   .menu-btn{display:block}
   .stats{grid-template-columns:repeat(2,1fr)}
   .proj-grid,.skill-grid,.edu-grid{grid-template-columns:1fr}
-  header{padding-top:calc(100px + 8vh)}
+  header{padding-top:110px;min-height:92vh}
 }
 </style>
 </head>
@@ -388,6 +388,8 @@ footer a:hover{color:var(--accent)}
 </footer>
 
 <script>
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+if (!location.hash) window.scrollTo(0, 0);
 document.getElementById('yr').textContent = new Date().getFullYear();
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
