@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deepikasai Mettu — AI Engineer & ServiceNow Developer</title>
+<meta name="description" content="Deepikasai Mettu — AI Engineer and ServiceNow Certified System Administrator in Boston, MA. Building AI agents, RAG pipelines, and enterprise automation.">
+<meta property="og:title" content="Deepikasai Mettu — AI Engineer & ServiceNow Developer">
+<meta property="og:description" content="AI Engineer with 3+ years designing AI-powered workflows, agentic automation, and enterprise ServiceNow solutions.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0714;
+  --bg-alt:#120b1e;
+  --card:#170f26;
+  --card-hover:#1d1430;
+  --border:#2a1e42;
+  --border-glow:#a78bfa40;
+  --text:#e2e8f0;
+  --text-dim:#94a3b8;
+  --text-faint:#64748b;
+  --accent:#a78bfa;
+  --accent2:#f472b6;
+  --accent3:#38bdf8;
+  --grad:linear-gradient(135deg,#a78bfa,#f472b6);
+  --glow1:#a78bfa;
+  --glow2:#f472b6;
+  --mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+::selection{background:#2dd4bf44}
+
+/* background grid */
+.bg-grid{position:fixed;inset:0;z-index:-2;background-image:linear-gradient(var(--card) 1px,transparent 1px),linear-gradient(90deg,var(--card) 1px,transparent 1px);background-size:44px 44px;opacity:.5;mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000 40%,transparent 100%)}
+.bg-glow{position:fixed;z-index:-1;width:640px;height:640px;border-radius:50%;filter:blur(140px);opacity:.16;pointer-events:none}
+.bg-glow.one{top:-200px;left:-120px;background:var(--glow1)}
+.bg-glow.two{top:30%;right:-220px;background:var(--glow2)}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px);background:#070b14cc;border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1080px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--mono);font-weight:600;font-size:15px;color:var(--text);text-decoration:none}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{color:var(--text-dim);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{padding:8px 16px;border:1px solid var(--accent);border-radius:8px;color:var(--accent)!important;font-family:var(--mono);font-size:13px!important}
+.nav-cta:hover{background:#2dd4bf14}
+.menu-btn{display:none;background:none;border:none;color:var(--text);font-size:22px;cursor:pointer}
+
+/* hero */
+header{padding:170px 0 90px;position:relative}
+.kicker{font-family:var(--mono);color:var(--accent);font-size:14px;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.kicker::before{content:'';width:34px;height:1px;background:var(--accent)}
+h1{font-size:clamp(38px,6vw,64px);font-weight:800;line-height:1.08;letter-spacing:-.02em;margin-bottom:14px}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-role{font-size:clamp(19px,2.6vw,26px);color:var(--text-dim);font-weight:600;margin-bottom:22px}
+.hero-role b{color:var(--text);font-weight:700}
+.hero-sub{max-width:640px;color:var(--text-dim);font-size:16.5px;margin-bottom:34px}
+.hero-sub strong{color:var(--accent);font-weight:600}
+.btn-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 24px;border-radius:10px;font-weight:600;font-size:14.5px;text-decoration:none;transition:all .2s;cursor:pointer}
+.btn-primary{background:var(--grad);color:#04121f}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px #2dd4bf33}
+.btn-ghost{border:1px solid var(--border);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.hero-badges{display:flex;gap:10px;flex-wrap:wrap}
+.badge{font-family:var(--mono);font-size:12.5px;color:var(--text-dim);border:1px solid var(--border);padding:7px 14px;border-radius:99px;background:#0f172a66}
+.badge b{color:var(--accent);font-weight:600}
+
+/* stats strip */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:10px 0 0}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;text-align:center;transition:border-color .25s}
+.stat:hover{border-color:var(--border-glow)}
+.stat .num{font-size:30px;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .lbl{font-size:12.5px;color:var(--text-faint);margin-top:4px;font-family:var(--mono)}
+
+/* sections */
+section{padding:88px 0}
+.sec-head{display:flex;align-items:center;gap:16px;margin-bottom:44px}
+.sec-num{font-family:var(--mono);color:var(--accent);font-size:15px}
+h2{font-size:clamp(26px,3.4vw,34px);font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+.sec-line{height:1px;background:var(--border);flex:1}
+
+/* experience */
+.xp{position:relative;padding-left:34px;border-left:1px solid var(--border);margin-left:8px}
+.xp-item{position:relative;padding-bottom:56px}
+.xp-item:last-child{padding-bottom:0}
+.xp-item::before{content:'';position:absolute;left:-39px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.xp-item.current::before{background:var(--accent);box-shadow:0 0 14px #2dd4bf88}
+.xp-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:4px}
+.xp-role{font-size:19px;font-weight:700}
+.xp-role span{color:var(--accent)}
+.xp-date{font-family:var(--mono);font-size:13px;color:var(--text-faint);padding-top:4px}
+.xp-org{color:var(--text-dim);font-weight:600;font-size:15px;margin-bottom:14px}
+.xp ul{list-style:none;display:grid;gap:9px}
+.xp li{color:var(--text-dim);font-size:15px;padding-left:22px;position:relative}
+.xp li::before{content:'▸';position:absolute;left:0;color:var(--accent)}
+.xp li b{color:var(--text);font-weight:600}
+.xp-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.tag{font-family:var(--mono);font-size:11.5px;color:var(--accent);background:#2dd4bf10;border:1px solid #2dd4bf2e;padding:4px 11px;border-radius:99px}
+.tag.alt{color:var(--accent2);background:#818cf810;border-color:#818cf82e}
+
+/* projects */
+.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.proj{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;display:flex;flex-direction:column;transition:all .25s;position:relative;overflow:hidden}
+.proj::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad);opacity:0;transition:opacity .25s}
+.proj:hover{border-color:var(--border-glow);background:var(--card-hover);transform:translateY(-4px)}
+.proj:hover::before{opacity:1}
+.proj.featured{grid-column:span 1}
+.proj-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
+.proj-icon{font-size:26px}
+.proj-links{display:flex;gap:12px}
+.proj-links a{color:var(--text-faint);text-decoration:none;font-size:18px;transition:color .2s}
+.proj-links a:hover{color:var(--accent)}
+.proj h3{font-size:18.5px;font-weight:700;margin-bottom:4px}
+.proj .proj-sub{font-family:var(--mono);font-size:12px;color:var(--accent);margin-bottom:12px}
+.proj p{color:var(--text-dim);font-size:14.5px;flex:1}
+.proj p b{color:var(--text);font-weight:600}
+.proj-tech{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px}
+.proj-tech span{font-family:var(--mono);font-size:11px;color:var(--text-faint);background:#1e293b66;padding:4px 10px;border-radius:6px}
+
+/* skills */
+.skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.skill-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px;transition:border-color .25s}
+.skill-card:hover{border-color:var(--border-glow)}
+.skill-card h3{font-size:16px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.skill-card h3 .dot{width:9px;height:9px;border-radius:50%;background:var(--grad)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-size:13px;color:var(--text-dim);border:1px solid var(--border);padding:6px 13px;border-radius:8px;transition:all .2s}
+.chip:hover{color:var(--accent);border-color:var(--accent)}
+.chip.hot{color:var(--accent);border-color:#2dd4bf55;background:#2dd4bf0d}
+
+/* education */
+.edu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.edu-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px}
+.edu-card .deg{font-weight:700;font-size:16.5px;margin-bottom:3px}
+.edu-card .school{color:var(--accent);font-size:14.5px;font-weight:600}
+.edu-card .meta{font-family:var(--mono);font-size:12.5px;color:var(--text-faint);margin-top:8px}
+.cert-strip{margin-top:20px;background:linear-gradient(135deg,#2dd4bf0d,#818cf80d);border:1px solid #2dd4bf33;border-radius:16px;padding:24px 26px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.cert-strip .cert-ico{font-size:30px}
+.cert-strip .cert-name{font-weight:700;font-size:16px}
+.cert-strip .cert-sub{color:var(--text-dim);font-size:13.5px}
+
+/* contact */
+.contact{text-align:center;padding:100px 0 110px}
+.contact h2{white-space:normal;margin-bottom:16px}
+.contact p{color:var(--text-dim);max-width:540px;margin:0 auto 36px;font-size:16px}
+.contact-mail{font-family:var(--mono);font-size:15px;color:var(--accent);text-decoration:none;border-bottom:1px dashed #2dd4bf55;padding-bottom:2px}
+.contact-mail:hover{border-bottom-style:solid}
+.contact .btn-row{justify-content:center;margin:34px 0 0}
+
+footer{border-top:1px solid var(--border);padding:26px 0;text-align:center;color:var(--text-faint);font-size:13px;font-family:var(--mono)}
+footer a{color:var(--text-dim);text-decoration:none}
+footer a:hover{color:var(--accent)}
+
+/* reveal animation */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:820px){
+  .nav-links{position:fixed;top:57px;right:0;flex-direction:column;background:var(--bg-alt);border:1px solid var(--border);border-radius:0 0 0 14px;padding:22px 34px;gap:18px;transform:translateX(110%);transition:transform .3s}
+  .nav-links.open{transform:none}
+  .menu-btn{display:block}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .proj-grid,.skill-grid,.edu-grid{grid-template-columns:1fr}
+  header{padding-top:140px}
+}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-glow one"></div>
+<div class="bg-glow two"></div>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#top"><span>&gt;_</span> deepikasai.mettu</a>
+    <button class="menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <div class="nav-links">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a class="nav-cta" href="Deepikasai-Mettu-Resume.pdf" download>Resume ↓</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top" class="wrap">
+  <div class="kicker">Hi, my name is</div>
+  <h1>Deepikasai Mettu<span class="grad-text">.</span></h1>
+  <div class="hero-role">I build <b>AI agents</b> &amp; <b>enterprise automation</b> that ship to production.</div>
+  <p class="hero-sub">
+    <strong>AI Engineer</strong> and <strong>ServiceNow Certified System Administrator</strong> with 3+ years of experience
+    designing agentic AI workflows, RAG pipelines, and LLM-driven systems — from state-agency AI assistants serving
+    1000+ users to 300+ enterprise ServiceNow automations. Based in Boston, MA.
+  </p>
+  <div class="btn-row">
+    <a class="btn btn-primary" href="Deepikasai-Mettu-Resume.pdf" download>⬇ Download Resume</a>
+    <a class="btn btn-ghost" href="https://github.com/deepikasai-mettu" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn btn-ghost" href="https://www.linkedin.com/in/deepikasai-mettu-81a60416b/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+  <div class="hero-badges">
+    <span class="badge"><b>●</b> Open to AI Engineer · ServiceNow · Software &amp; Data roles</span>
+    <span class="badge">📍 Boston, MA</span>
+  </div>
+</header>
+
+<div class="wrap reveal">
+  <div class="stats">
+    <div class="stat"><div class="num">3+</div><div class="lbl">years experience</div></div>
+    <div class="stat"><div class="num">1000+</div><div class="lbl">users on my AI systems</div></div>
+    <div class="stat"><div class="num">300+</div><div class="lbl">workflows automated</div></div>
+    <div class="stat"><div class="num">7</div><div class="lbl">engineering awards</div></div>
+  </div>
+</div>
+
+<section id="experience" class="wrap">
+  <div class="sec-head reveal"><span class="sec-num">01.</span><h2>Where I've Worked</h2><div class="sec-line"></div></div>
+  <div class="xp">
+    <div class="xp-item current reveal">
+      <div class="xp-top">
+        <div class="xp-role">Generative AI Engineer <span>@ The Burnes Center for Social Change</span></div>
+        <div class="xp-date">Jul 2024 — Jun 2025</div>
+      </div>
+      <div class="xp-org">Boston, MA · Co-op → Part-Time Intern</div>
+      <ul>
+        <li>Engineered and deployed <b>two production AI agent systems</b> serving <b>1000+ users</b> across Massachusetts state agencies, improving response latency by <b>15%</b> with optimized RAG pipelines and prompt engineering.</li>
+        <li>Designed <b>agentic AI workflows</b> with multi-step reasoning and orchestration — autonomous query processing, contextual retrieval, and response generation — cutting manual workflow effort by <b>40%</b>.</li>
+        <li>Built backend services, REST APIs, and AI data pipelines for document ingestion, embedding generation, and vector search using <b>Python and AWS Bedrock</b>.</li>
+        <li>Implemented <b>AI governance &amp; monitoring</b>: input validation, output evaluation, and observability dashboards tracking 1000+ daily AI interactions.</li>
+        <li>Developed retrieval evaluation and debugging tools to improve grounding accuracy and uphold responsible AI practices.</li>
+        <li>Mentored <b>10 engineers</b> on LLM orchestration, prompt engineering, and RAG implementation strategies.</li>
+      </ul>
+      <div class="xp-tags">
+        <span class="tag">Agentic AI</span><span class="tag">RAG</span><span class="tag">AWS Bedrock</span><span class="tag">Python</span><span class="tag">LLM Orchestration</span><span class="tag">Vector Search</span>
+      </div>
+    </div>
+    <div class="xp-item reveal">
+      <div class="xp-top">
+        <div class="xp-role">Consultant, Enterprise Performance <span>@ Deloitte Consulting</span></div>
+        <div class="xp-date">Jan 2021 — Aug 2023</div>
+      </div>
+      <div class="xp-org">Hyderabad, India · ServiceNow Practice</div>
+      <ul>
+        <li>Engineered <b>300+ ServiceNow automation workflows</b> with Flow Designer &amp; IntegrationHub — automated incident classification, ticket routing, and orchestration, reducing manual processing time by <b>35%</b>.</li>
+        <li>Led <b>ServiceNow ITSM implementation for SMBC</b>: Incident, Problem, Change &amp; Catalog modules with custom business rules, UI policies, and automations — improving resolution time by <b>25%</b>.</li>
+        <li>Designed API-driven integrations connecting <b>Jira and Microsoft Teams to ServiceNow</b> via REST &amp; IntegrationHub, achieving a <b>29% reduction</b> in operational incidents.</li>
+        <li>Built reusable Service Portal components and scoped applications adopted across client projects, cutting follow-on delivery time by <b>50%</b>.</li>
+        <li>Implemented data migration pipelines for <b>100,000+ records</b> with validation scripts, rollback strategies, and governance controls.</li>
+        <li>Built testing frameworks and documentation used by <b>50+ engineers</b>, reducing onboarding time by 60% — earned <b>7 awards</b> for engineering excellence.</li>
+      </ul>
+      <div class="xp-tags">
+        <span class="tag alt">ServiceNow ITSM</span><span class="tag alt">Flow Designer</span><span class="tag alt">IntegrationHub</span><span class="tag alt">REST APIs</span><span class="tag alt">JavaScript</span><span class="tag alt">Scoped Apps</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="wrap">
+  <div class="sec-head reveal"><span class="sec-num">02.</span><h2>Things I've Built</h2><div class="sec-line"></div></div>
+  <div class="proj-grid">
+    <div class="proj featured reveal">
+      <div class="proj-top"><span class="proj-icon">📝</span>
+        <div class="proj-links"><a href="https://github.com/deepikasai-mettu/FFIO-GrantWell" target="_blank" rel="noopener" title="GitHub" aria-label="GrantWell on GitHub">⌥</a></div>
+      </div>
+      <h3>GrantWell — AI Grant-Writing Assistant</h3>
+      <div class="proj-sub">Production · Massachusetts FFIO</div>
+      <p>Generative AI assistant that scans lengthy federal <b>Notice of Funding Opportunity (NOFO)</b> documents, extracts requirements, and helps municipalities draft grant narratives. Full <b>RAG pipeline</b> — document ingestion, embeddings, retrieval — deployed for Massachusetts Federal Funds &amp; Infrastructure Office staff.</p>
+      <div class="proj-tech"><span>AWS Bedrock</span><span>RAG</span><span>Python</span><span>TypeScript</span><span>React</span><span>Vector DB</span></div>
+    </div>
+    <div class="proj featured reveal">
+      <div class="proj-top"><span class="proj-icon">🤖</span>
+        <div class="proj-links"><a href="https://github.com/deepikasai-mettu/OpsGenie-Cohort3" target="_blank" rel="noopener" title="GitHub" aria-label="OpsGenie on GitHub">⌥</a></div>
+      </div>
+      <h3>OpsGenie — IT Operations AI Chatbot</h3>
+      <div class="proj-sub">Production · MA Health &amp; Human Services</div>
+      <p>First dedicated IT-ops chatbot for MA EOHHS: answers with <b>source citations</b>, auto-syncs knowledge from SharePoint, redacts <b>PII via AWS Comprehend</b>, and ships with a built-in <b>LLM evaluation system</b> plus real-time KPI dashboards.</p>
+      <div class="proj-tech"><span>AWS Bedrock</span><span>Kendra</span><span>Lambda</span><span>DynamoDB</span><span>React</span><span>AWS CDK</span></div>
+    </div>
+    <div class="proj reveal">
+      <div class="proj-top"><span class="proj-icon">🎨</span>
+        <div class="proj-links"><a href="https://github.com/deepikasai-mettu/generative-deep-learning-project" target="_blank" rel="noopener" title="GitHub" aria-label="Generative deep learning on GitHub">⌥</a></div>
+      </div>
+      <h3>Text-Conditioned Diffusion Model</h3>
+      <div class="proj-sub">Generative Deep Learning</div>
+      <p>Implemented and fine-tuned a <b>conditional diffusion model</b> using text embeddings as conditioning input — exploring transformer architectures, text-image alignment, and multimodal representations with quantitative &amp; qualitative evaluation.</p>
+      <div class="proj-tech"><span>PyTorch</span><span>Diffusion</span><span>Transformers</span><span>Embeddings</span></div>
+    </div>
+    <div class="proj reveal">
+      <div class="proj-top"><span class="proj-icon">🧠</span>
+        <div class="proj-links"><a href="https://github.com/deepikasai-mettu/EEG_classification" target="_blank" rel="noopener" title="GitHub" aria-label="EEG classification on GitHub">⌥</a></div>
+      </div>
+      <h3>EEG Seizure Classification</h3>
+      <div class="proj-sub">ML for Healthcare</div>
+      <p>Epilepsy diagnosis pipeline on the CHB-MIT EEG database: band-pass filtering, windowed <b>feature extraction</b>, SMOTE class balancing, and model comparison across <b>Random Forest, Decision Tree &amp; CNN</b> (up to 97.7% accuracy).</p>
+      <div class="proj-tech"><span>Python</span><span>MNE</span><span>scikit-learn</span><span>CNN</span><span>SMOTE</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="wrap">
+  <div class="sec-head reveal"><span class="sec-num">03.</span><h2>Skills &amp; Tools</h2><div class="sec-line"></div></div>
+  <div class="skill-grid">
+    <div class="skill-card reveal">
+      <h3><span class="dot"></span>AI / Machine Learning</h3>
+      <div class="chips">
+        <span class="chip hot">Agentic AI</span><span class="chip hot">RAG Pipelines</span><span class="chip hot">LLM Orchestration</span>
+        <span class="chip">Prompt Engineering</span><span class="chip">Vector Databases</span><span class="chip">Embeddings</span>
+        <span class="chip">Retrieval Systems</span><span class="chip">Model Fine-tuning</span><span class="chip">Predictive Intelligence</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <h3><span class="dot"></span>ServiceNow Platform <span style="font-size:11px;font-family:var(--mono);color:var(--accent);font-weight:500">· CSA Certified</span></h3>
+      <div class="chips">
+        <span class="chip hot">ITSM</span><span class="chip hot">Flow Designer</span><span class="chip hot">IntegrationHub</span>
+        <span class="chip">Virtual Agent</span><span class="chip">Now Assist</span><span class="chip">Predictive Intelligence</span>
+        <span class="chip">Service Portal</span><span class="chip">Scoped Apps</span><span class="chip">Business Rules</span>
+        <span class="chip">UI Policies</span><span class="chip">Client/Server Scripts</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <h3><span class="dot"></span>Programming &amp; Cloud</h3>
+      <div class="chips">
+        <span class="chip hot">Python</span><span class="chip hot">JavaScript</span><span class="chip">TypeScript</span>
+        <span class="chip">SQL</span><span class="chip">Node.js</span><span class="chip hot">AWS Bedrock</span>
+        <span class="chip">Lambda</span><span class="chip">S3 · EC2</span><span class="chip">Docker</span>
+        <span class="chip">CI/CD</span><span class="chip">Microservices</span><span class="chip">REST APIs</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <h3><span class="dot"></span>Data Engineering &amp; Analytics</h3>
+      <div class="chips">
+        <span class="chip hot">ETL/ELT Pipelines</span><span class="chip">PySpark</span><span class="chip">MySQL</span>
+        <span class="chip">DynamoDB</span><span class="chip">Tableau</span><span class="chip">Jira</span><span class="chip">GitHub</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="wrap">
+  <div class="sec-head reveal"><span class="sec-num">04.</span><h2>Education &amp; Certification</h2><div class="sec-line"></div></div>
+  <div class="edu-grid">
+    <div class="edu-card reveal">
+      <div class="deg">M.S. Data Analytics Engineering</div>
+      <div class="school">Northeastern University · Boston, MA</div>
+      <div class="meta">Sept 2023 — Dec 2025</div>
+    </div>
+    <div class="edu-card reveal">
+      <div class="deg">B.Tech, Electrical &amp; Electronics Engineering</div>
+      <div class="school">VNR Vignana Jyothi Institute of Engineering &amp; Technology</div>
+      <div class="meta">Aug 2016 — Sept 2020 · Hyderabad, India</div>
+    </div>
+  </div>
+  <div class="cert-strip reveal">
+    <span class="cert-ico">🏅</span>
+    <div>
+      <div class="cert-name">ServiceNow Certified System Administrator (CSA)</div>
+      <div class="cert-sub">ServiceNow · Platform administration, ITSM configuration &amp; automation</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact wrap">
+  <div class="reveal">
+    <div class="kicker" style="justify-content:center">05. What's next?</div>
+    <h2>Let's Build Something Intelligent</h2>
+    <p>I'm actively seeking full-time roles in <b style="color:var(--text)">AI engineering</b>, <b style="color:var(--text)">ServiceNow development</b>, and <b style="color:var(--text)">software &amp; data engineering</b>. If you think I'd be a fit for your team, my inbox is open.</p>
+    <a class="contact-mail" href="mailto:mettu.d@northeastern.edu">mettu.d@northeastern.edu</a>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="mailto:mettu.d@northeastern.edu">Say Hello 👋</a>
+      <a class="btn btn-ghost" href="Deepikasai-Mettu-Resume.pdf" download>Resume ↓</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Designed &amp; built by <a href="https://github.com/deepikasai-mettu" target="_blank" rel="noopener">Deepikasai Mettu</a> · © <span id="yr"></span></div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('open')));
+</script>
+</body>
+</html>
